@@ -23,3 +23,25 @@ def start_of_word stringToEcho, letters
   end
   returnString
 end
+
+def first_word stringToEcho
+  stringToEcho.split(' ').first
+end
+
+def titleize stringToEcho
+  words = stringToEcho.split(' ')
+  capitalwords=[]
+  littlewords = ['a', 'the', 'and', 'over']
+  words.each do |word|
+    if littlewords.include?(word)
+      if capitalwords.length == 0
+        capitalwords.push word.capitalize
+      else
+        capitalwords.push word
+      end
+    else
+      capitalwords.push word.capitalize
+    end
+  end
+  capitalwords.join(' ')
+end
